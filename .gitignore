@@ -1,0 +1,21 @@
+
+# Playwright
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/package-lock.json/
+
+# Storage & Cookies - Sensitive Data
+cookie.json
+storage/cookie.json
+storage/*.json
+*.cookie
+*.session
+
+# Environment & Config
+.env
+.env.local
+.env.production
+.env.staging
