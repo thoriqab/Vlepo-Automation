@@ -22,7 +22,7 @@ export const test = base.extend({
         }
 
         if (needLogin) {
-            await AuthHelper.loginAndSave(ENV.defaultEmail, ENV.defaultPassword);
+            await AuthHelper.loginAndSave(ENV.adminEmail, ENV.adminPassword);
         }
             
             await use(STORAGE_STATE_PATH);

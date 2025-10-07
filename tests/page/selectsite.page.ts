@@ -12,7 +12,7 @@ export class SelectSitePage {
 
      async selectSite(siteName: string): Promise<void> {
         
-        await this.page.goto(`${ENV.baseURL}home`, { timeout: 15000 }); 
+        // await this.page.goto(`${ENV.baseURL}home`, { timeout: 15000 }); 
         await expect(this.head.headerLogo).toBeVisible({ timeout: 15000 });
         console.log('Logo is visible');
 
