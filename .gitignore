@@ -10,7 +10,7 @@ node_modules/
 # Storage & Cookies - Sensitive Data
 cookie.json
 storage/cookie.json
-storage/*.json
+/tests/storage/*.json
 *.cookie
 *.session
 
