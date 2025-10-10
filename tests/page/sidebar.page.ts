@@ -2,16 +2,15 @@ import {Locator, Page, expect, chromium} from '@playwright/test';
 import fs from 'fs';
 import { SidebarSelectors } from '../selector/sidebar.selector';
 import { AuthHelper, STORAGE_STATE_PATH } from '../helpers/auth.helper';
+import { BasePage } from './base.page';
 
 
-
-export class SideBar {
+export class SideBar extends BasePage {
 
     private readonly sidebar : SidebarSelectors;
-    public readonly page : Page;
-
+    
     constructor(page : Page) {
-        this.page = page; 
+        super(page);
         this.sidebar = new SidebarSelectors(page);
     }
 
@@ -25,14 +24,5 @@ export class SideBar {
 
         return new SideBar(page);
     }
-    
-    async navigateTo(menu : Locator, expectedUrl : string) {
-        
-        // Click on the sidebar menu item based on the linkName 
-        await menu.click();
-        await expect(this.page).toHaveURL(new RegExp(expectedUrl));
-        await this.page.waitForSelector('#spinner-box', { state: 'hidden' }); 
 
-        console.log(`Navigated to ${expectedUrl} successfully`);
-    }
 }
